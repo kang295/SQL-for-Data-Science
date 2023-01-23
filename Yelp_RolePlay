@@ -25,7 +25,7 @@ ix. review table = 10000
 x. tip table = 10000
 xi. user table = 10000
 	
-Sample code (including NULL values):
+SQL code used to arrive at answer:
 
 SELECT 
 COUNT(*)
@@ -41,20 +41,25 @@ FROM attribute
 If two foreign keys are listed in the table, please specify which foreign key.
 
 i. Business = 10000
-ii. Hours =
+ii. Hours = 1562
 iii. Category = 2643
-iv. Attribute =
-v. Review =
-vi. Checkin = 
-vii. Photo =
-viii. Tip = 
-ix. User = 
-x. Friend = 
-xi. Elite_years =
+iv. Attribute = 1115
+v. Review = 10000
+vi. Checkin = 493
+vii. Photo = 10000
+viii. Tip = 573 (user_id)
+ix. User = 10000
+x. Friend = 11
+xi. Elite_years = 2780
 
 Note: Primary Keys are denoted in the ER-Diagram with a yellow key icon.	
+-- Foreign Key is Red icon (I used one of them when there are two foreign keys)
 
+SQL code used to arrive at answer:
 
+SELECT
+(COUNT(distinct business_id))AS total 
+FROM hours;
 
 3. Are there any columns with null values in the Users table? Indicate "yes," or "no."
 
