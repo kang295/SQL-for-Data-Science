@@ -13,25 +13,36 @@ Part 1: Yelp Dataset Profiling and Understanding
 
 1. Profile the data by finding the total number of records for each of the tables below:
 	
-i. Attribute table =
-ii. Business table =
-iii. Category table =
-iv. Checkin table =
-v. elite_years table =
-vi. friend table = 
-vii. hours table =
-viii. photo table = 
-ix. review table = 
-x. tip table = 
-xi. user table =
+i. Attribute table = 10000
+ii. Business table = 10000
+iii. Category table = 10000
+iv. Checkin table = 10000
+v. elite_years table = 10000
+vi. friend table = 10000
+vii. hours table = 10000
+viii. photo table = 10000
+ix. review table = 10000
+x. tip table = 10000
+xi. user table = 10000
 	
+Sample code (including NULL values):
 
+SELECT 
+COUNT(*)
+FROM attribute
 
-2. Find the total distinct records by either the foreign key or primary key for each table. If two foreign keys are listed in the table, please specify which foreign key.
++----------+
+| COUNT(*) |
++----------+
+|    10000 |
++----------+
 
-i. Business =
+2. Find the total distinct records by either the foreign key or primary key for each table. 
+If two foreign keys are listed in the table, please specify which foreign key.
+
+i. Business = 10000
 ii. Hours =
-iii. Category =
+iii. Category = 2643
 iv. Attribute =
 v. Review =
 vi. Checkin = 
