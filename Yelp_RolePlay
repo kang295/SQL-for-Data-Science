@@ -426,12 +426,31 @@ and so on. These are just a few examples to get you started, so feel free to be 
 Provide answers, in-line, to all of the following:
 	
 i. Indicate the type of analysis you chose to do:
-         
+ -- I chose to use two tables (business and review) to determine which city has retaurant with good star ratings.          
          
 ii. Write 1-2 brief paragraphs on the type of data you will need for your analysis and why you chose that data:
-                           
+-- I used city and stars data to compare the city with good star ratings. It shows that Phoenix has two restaurants with 
+5 stars, Las Vegas has two restaurants with 4 and 5 star ratings. However, Peoria has only one restaurant with 1 star rating.
+I analyzed that it can be a good opportunity for a person who wants to open a restaurant in Peoria since people in Peoria
+is looking for better restaurant with better taste, customer service or etc..
                   
 iii. Output of your finished dataset:
-         
++-----------+-------+
+| city      | stars |
++-----------+-------+
+| Las Vegas |     4 |
+| Las Vegas |     5 |
+| Phoenix   |     5 |
+| Las Vegas |     5 |
+| Peoria    |     1 |
+| Phoenix   |     5 |
++-----------+-------+  
          
 iv. Provide the SQL code you used to create your final dataset:
+SELECT
+business.city,
+review.stars
+FROM business INNER JOIN review
+ON business.id = review.id
+WHERE city = 'Phoenix' or city = 'Las Vegas' or city = 'Peoria'
+ORDER BY review.stars and business.city
