@@ -384,14 +384,37 @@ Copy and Paste the Result Below:
 the ones that are closed? List at least two differences and the SQL code you used to arrive at your answer.
 		
 i. Difference 1:
-         
+-- The business, Big City Grill, with higher star rating(5.0) closed while 'Gorgeous Glo'
+with star rating(3.5) still opens. It shows that the higher star rating does not guarantee the business's success.
          
 ii. Difference 2:
-         
+-- The business, Big City Grill, has 9 hours of working while 'Gorgeous Glo'
+with only 5 hours. It shows that the short amount of working hours does not affect the business.          
          
          
 SQL code used for analysis:
+SELECT
+B.name,
+B.is_open,
+C.category,
+B.city,
+B.stars,
+B.review_count,
+H.hours
+FROM (business B INNER JOIN Category C
+ON B.id = C.business_id)
+INNER JOIN hours H
+ON B.id = H.business_id
+WHERE city = 'Charlotte'
+GROUP BY B.is_open
 
+Copy and Paste the Result Below:
++----------------+---------+---------------+-----------+-------+--------------+----------------------+
+| name           | is_open | category      | city      | stars | review_count | hours                |
++----------------+---------+---------------+-----------+-------+--------------+----------------------+
+| Big City Grill |       0 | Hot Dogs      | Charlotte |   5.0 |            4 | Saturday|11:00-20:00 |
+| Gorgeous Glo   |       1 | Beauty & Spas | Charlotte |   3.5 |           10 | Saturday|11:00-16:00 |
++----------------+---------+---------------+-----------+-------+--------------+----------------------+
 	
 	
 3. For this last part of your analysis, you are going to choose the type of analysis you want to conduct on the Yelp dataset and 
